@@ -23,7 +23,6 @@
 
 
         <FrameLayout
-            android:visibility="gone"
             android:id="@+id/layout_progress"
             android:background="@color/colorWhiteTransparent"
             android:layout_width="match_parent"
@@ -32,8 +31,9 @@
             android:focusable="true">
 
             <android.rezkyauliapratama.com.mmppdc.common.DualProgressView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/size_image_48dp"
+                android:layout_height="@dimen/size_image_48dp"
+                android:layout_gravity="center"
                 app:dpv_inner_color="@color/colorPrimaryDark"
                 app:dpv_inner_padding="8dp"
                 app:dpv_outer_color="@color/colorAccent"
