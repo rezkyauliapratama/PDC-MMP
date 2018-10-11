@@ -1,6 +1,7 @@
 package android.rezkyauliapratama.com.mmppdc.di.controller
 
 import android.rezkyauliapratama.com.mmppdc.di.application.ApplicationComponent
+import android.rezkyauliapratama.com.mmppdc.screens.login.LoginActivity
 import dagger.Component
 
 /**
@@ -9,5 +10,6 @@ import dagger.Component
 @PerController
 @Component(dependencies = [ApplicationComponent::class], modules = [ActivityModule::class, MvcWrapperModule::class, ControllerModule::class])
 interface ControllerComponent{
+    fun inject(loginActivity: LoginActivity)
 
 }

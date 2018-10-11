@@ -5,13 +5,13 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 
 
-class FragmentFrameHelper(private val mActivity: Activity, private val mFragmentFrameWrapper: FragmentFrameWrapper, private val mFragmentManager: FragmentManager) {
+class FragmentFrameHelper(private val mActivity: Activity, private val mFragmentFrameWrapper: FragmentFrameWrapper?, private val mFragmentManager: FragmentManager) {
 
-    private val currentFragment: Fragment
-        get() = mFragmentManager.findFragmentById(fragmentFrameId)
+    private val currentFragment: Fragment?
+        get() = fragmentFrameId?.let { mFragmentManager.findFragmentById(it) }
 
-    private val fragmentFrameId: Int
-        get() = mFragmentFrameWrapper.fragmentFrame.id
+    private val fragmentFrameId: Int?
+        get() = mFragmentFrameWrapper?.fragmentFrame?.id
 
     fun replaceFragment(newFragment: Fragment) {
         replaceFragment(newFragment, true, false)
@@ -21,7 +21,7 @@ class FragmentFrameHelper(private val mActivity: Activity, private val mFragment
         replaceFragment(newFragment, false, false)
     }
 
-    fun getFragment() : Fragment{
+    fun getFragment() : Fragment?{
         return currentFragment
     }
     fun replaceFragmentAndClearBackstack(newFragment: Fragment) {
@@ -83,7 +83,7 @@ class FragmentFrameHelper(private val mActivity: Activity, private val mFragment
         }
 
         // Change to a new fragment
-        ft.replace(fragmentFrameId, newFragment, null)
+        fragmentFrameId?.let { ft.replace(it, newFragment, null) }
 
         if (mFragmentManager.isStateSaved) {
             // We acknowledge the possibility of losing this transaction if the app undergoes

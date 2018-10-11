@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:id="@+id/layout_content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".controller.activity.LoginActivity"
+        tools:showIn="@layout/activity_login">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/layout_main">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="@dimen/size_image_124dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="@dimen/size_width_logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_sales_web"/>
+        </FrameLayout>
+        <LinearLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_normal"
+            android:paddingLeft="@dimen/margin_normal"
+            android:paddingRight="@dimen/margin_normal"
+            android:layout_margin="@dimen/margin_large"
+            android:layout_centerInParent="true">
+
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_normal" />
+
+            <com.app.infideap.stylishwidget.view.AEditText
+                android:id="@+id/etUsername"
+                style="@style/EditText.RoundBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="24"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textAppearance="@style/TextStyle.Medium"
+                android:textStyle="bold" />
+
+            <com.app.infideap.stylishwidget.view.AEditText
+                android:id="@+id/etPassword"
+                style="@style/EditText.RoundBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="24"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textAppearance="@style/TextStyle.Medium"
+                android:textStyle="bold" />
+
+
+            <android.support.v4.widget.Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/space_small" />
+
+            <com.app.infideap.stylishwidget.view.AButton
+                android:id="@+id/btnLogin"
+                style="@style/Button.Accent.Fill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textAppearance="@style/TextStyle.Medium" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

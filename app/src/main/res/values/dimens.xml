@@ -29,9 +29,23 @@
     <dimen name="height_gallery_image">72dp</dimen>
 
     <dimen name="size_image_92dp">92dp</dimen>
-    <dimen name="size_image_64dp">64dp</dimen>
-    <dimen name="size_image_36dp">36dp</dimen>
     <dimen name="size_image_24dp">24dp</dimen>
+    <dimen name="size_image_36dp">36dp</dimen>
+    <dimen name="size_image_48dp">48dp</dimen>
+    <dimen name="size_image_64dp">64dp</dimen>
+    <dimen name="size_image_96dp">96dp</dimen>
+    <dimen name="size_image_124dp">124dp</dimen>
+    <dimen name="size_image_164dp">164dp</dimen>
+
     <dimen name="default_card_height">98dp</dimen>
     <dimen name="peekheight_normal">56dp</dimen>
+
+
+    <dimen name="size_width_logo">320dp</dimen>
+    <dimen name="size_width_notification_logo">60dp</dimen>
+    <dimen name="size_width_redeem_logo">60dp</dimen>
+    <dimen name="size_width_reward_logo">30dp</dimen>
+
+
+
 </resources>
