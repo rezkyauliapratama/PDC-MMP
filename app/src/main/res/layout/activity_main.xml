@@ -33,7 +33,7 @@
                     app:elevation="4dp"
                     android:theme="@style/AppTheme.AppBarOverlay">
 
-                    <android.mmp.com.salestool.view.AToolbar
+                    <android.rezkyauliapratama.com.mmppdc.utils.AToolbar
                         android:id="@+id/toolbar"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
@@ -54,7 +54,7 @@
                                 android:textAppearance="@style/TextStyle.Large"
                                 android:textStyle="bold"/>
                         </RelativeLayout>
-                    </android.mmp.com.salestool.view.AToolbar>
+                    </android.rezkyauliapratama.com.mmppdc.utils.AToolbar>
 
                 </android.support.design.widget.AppBarLayout>
 
