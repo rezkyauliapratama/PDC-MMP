@@ -1,8 +1,7 @@
 package android.rezkyauliapratama.com.mmppdc.screens.common.screennavigator
 
 import android.app.Activity
-import android.content.Intent
-import android.rezkyauliapratama.com.mmppdc.screens.MainActivity
+import android.rezkyauliapratama.com.mmppdc.screens.dashboard.MainActivity
 import android.rezkyauliapratama.com.mmppdc.screens.common.FragmentFrameHelper.FragmentFrameHelper
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.startActivity

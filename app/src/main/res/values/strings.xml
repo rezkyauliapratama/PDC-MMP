@@ -3,4 +3,8 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="logout">Log out</string>
+    <string name="more">More</string>
+    <string name="Setting">Setting</string>
 </resources>

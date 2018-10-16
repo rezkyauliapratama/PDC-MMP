@@ -1,4 +1,4 @@
-package android.rezkyauliapratama.com.mmppdc.screens
+package android.rezkyauliapratama.com.mmppdc.screens.dashboard
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

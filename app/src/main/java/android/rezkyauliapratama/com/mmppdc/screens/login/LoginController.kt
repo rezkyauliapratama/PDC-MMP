@@ -10,7 +10,12 @@ class LoginController (val screensNavigator: ScreensNavigator) : BaseController(
 
     override fun onLogin(email: String, password: String) {
         error { "onLogin" }
+        mViewMvc.showProgressIndication()
+
+        //TODO change with business logic for login
         screensNavigator.toMainActivity()
+
+        mViewMvc.hideProgressIndication()
     }
 
 

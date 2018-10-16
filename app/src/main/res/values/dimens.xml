@@ -36,6 +36,7 @@
     <dimen name="size_image_96dp">96dp</dimen>
     <dimen name="size_image_124dp">124dp</dimen>
     <dimen name="size_image_164dp">164dp</dimen>
+    <dimen name="nav_profile_photo_size">42dp</dimen>
 
     <dimen name="default_card_height">98dp</dimen>
     <dimen name="peekheight_normal">56dp</dimen>
