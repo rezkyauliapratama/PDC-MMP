@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/contentBody"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,12 +57,14 @@
                     android:gravity="center"
                     android:text="@string/list_item"
                     android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
                     />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_listItem"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/list_item"/>
 
             </LinearLayout>
 
@@ -91,7 +94,7 @@
                 android:id="@+id/tv_showMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textAppearance="@style/TextStyle.Small"
                 android:text="@string/detail_information"
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center"

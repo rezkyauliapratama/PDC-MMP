@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     >
     <LinearLayout
         android:id="@+id/contentSo"
@@ -20,6 +19,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/customer_code"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -29,6 +29,7 @@
                 android:text="@string/doublepoint"
                 android:textColor="@color/colorBlack_1000"
                 android:gravity="center"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -38,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tripledot"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
         </LinearLayout>
@@ -53,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/customer_name"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -62,6 +65,7 @@
                 android:text="@string/doublepoint"
                 android:textColor="@color/colorBlack_1000"
                 android:gravity="center"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -71,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tripledot"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
         </LinearLayout>
@@ -87,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/customer_category"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -96,6 +102,7 @@
                 android:text="@string/doublepoint"
                 android:textColor="@color/colorBlack_1000"
                 android:gravity="center"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -104,6 +111,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tripledot"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
         </LinearLayout>
@@ -119,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/customer_type"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -128,6 +137,7 @@
                 android:text="@string/doublepoint"
                 android:textColor="@color/colorBlack_1000"
                 android:gravity="center"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -137,6 +147,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tripledot"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
         </LinearLayout>
 
@@ -151,6 +162,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/total_credit"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -160,6 +172,7 @@
                 android:text="@string/doublepoint"
                 android:textColor="@color/colorBlack_1000"
                 android:gravity="center"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -169,6 +182,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tripledot"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
         </LinearLayout>
@@ -184,6 +198,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/credit_term"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -193,6 +208,7 @@
                 android:text="@string/doublepoint"
                 android:textColor="@color/colorBlack_1000"
                 android:gravity="center"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
             <com.app.infideap.stylishwidget.view.ATextView
@@ -202,6 +218,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tripledot"
                 android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
                 />
 
         </LinearLayout>
