@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:id="@+id/contentSo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/customer_code"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doublepoint"
+                android:textColor="@color/colorBlack_1000"
+                android:gravity="center"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:id="@+id/tv_customerCode"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tripledot"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/customer_name"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doublepoint"
+                android:textColor="@color/colorBlack_1000"
+                android:gravity="center"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:id="@+id/tv_customerName"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tripledot"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/customer_category"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doublepoint"
+                android:textColor="@color/colorBlack_1000"
+                android:gravity="center"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tripledot"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/customer_type"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doublepoint"
+                android:textColor="@color/colorBlack_1000"
+                android:gravity="center"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:id="@+id/tv_customerType"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tripledot"
+                android:textColor="@color/colorBlack_1000"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/total_credit"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doublepoint"
+                android:textColor="@color/colorBlack_1000"
+                android:gravity="center"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:id="@+id/tv_totalCredit"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tripledot"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/credit_term"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_weight="0.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/doublepoint"
+                android:textColor="@color/colorBlack_1000"
+                android:gravity="center"
+                />
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:id="@+id/tv_creditTerm"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tripledot"
+                android:textColor="@color/colorBlack_1000"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</layout>

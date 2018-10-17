@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:id="@+id/contentSo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_small"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextStyle.Small"
+                    android:text="@string/item_name"
+                    android:textColor="@color/colorBlack_1000"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_itemName"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    />
+
+            </LinearLayout>
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/discount"
+                android:textColor="@color/colorBlack_1000"
+                android:textAppearance="@style/TextStyle.Small"
+                android:paddingLeft="@dimen/margin_small"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/on"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+                    android:paddingLeft="@dimen/margin_small"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_discountOn"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bp1"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+                    android:paddingLeft="@dimen/margin_small"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_discountBp1"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Bp2"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+                    android:paddingLeft="@dimen/margin_small"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_discountBp2"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+                    android:paddingLeft="@dimen/margin_small"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_totalDiscount"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/max"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+                    android:paddingLeft="@dimen/margin_small"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_discountMax"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hpp_cab"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    android:gravity="center"
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_hppCab"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_unit"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hna_per_pcs"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_hnaPerPcs"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_hna"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_totalHna"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_weight="0.1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doublepoint"
+                    android:textColor="@color/colorBlack_1000"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_desc"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tripledot"
+                    android:textColor="@color/colorBlack_1000"
+                    android:textAppearance="@style/TextStyle.Small"
+
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+</layout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/contentBody"
@@ -14,13 +14,90 @@
         android:background="@drawable/layerlist_round_dash"
         >
 
-        <LinearLayout
+        <include layout="@layout/content_so_information" android:id="@+id/content_soInformation"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:background="@color/colorLine"
+            />
+
+
+        <include layout="@layout/content_pdc_information" android:id="@+id/content_pdcInformation"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:background="@color/colorLine"
+            />
+
+
+        <FrameLayout
+            android:id="@+id/container_detailInformation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/container_rvListItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_image_48dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/list_item"
+                    android:textColor="@color/colorBlack_1000"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_listItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:id="@+id/tv_noItems"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_image_48dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/no_items"
+                android:textColor="@color/colorBlack_1000"
+                android:visibility="gone"
+                />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlueGrey_600"
+            android:padding="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_normal">
+
+            <com.app.infideap.stylishwidget.view.ATextView
+                android:id="@+id/tv_showMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="@string/detail_information"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center"
+                />
+        </FrameLayout>
     </LinearLayout>
+
 
 </layout>
