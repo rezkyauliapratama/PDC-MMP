@@ -20,9 +20,7 @@ class LoginApi  @Inject constructor(private val networkClient: NetworkClient) : 
         return Single.create<Response> { emitter ->
             try {
                 login(user)
-                        .also { error { Gson().toJson(it) } }
                         .apply { emitter.onSuccess(this) }
-
             } catch (e: Exception) {
                 emitter.onError(e)
             }
@@ -36,8 +34,6 @@ class LoginApi  @Inject constructor(private val networkClient: NetworkClient) : 
 
         try
         {
-            error { "ObjectUrl.login() : "+ObjectUrl.login() }
-            error { "user : "+Gson().toJson(user)}
             return with(networkClient){
                 cancelByTag(TAG)
                 withUrl(ObjectUrl.login())

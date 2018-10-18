@@ -32,4 +32,6 @@
     <string name="hna_per_pcs">HNA per pcs</string>
     <string name="total_hna">Total HNA</string>
     <string name="description">Desciption</string>
+    <string name="navigation_drawer_open">Drawer open</string>
+    <string name="navigation_drawer_close">Drawer close</string>
 </resources>

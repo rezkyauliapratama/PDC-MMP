@@ -13,7 +13,6 @@ class LoginController (val screensNavigator: ScreensNavigator, val dataManager: 
 
 
     override fun onLogin(email: String, password: String) {
-        error { "onLogin" }
         mViewMvc.showProgressIndication()
         val userSchema = UserSchema(email = email, password = password)
         compositeDisposable.add(

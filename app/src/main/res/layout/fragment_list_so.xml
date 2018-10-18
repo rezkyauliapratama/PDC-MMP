@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
-    <RelativeLayout
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh_listSo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite"
@@ -14,6 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </layout>
