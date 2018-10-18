@@ -8,7 +8,7 @@ sealed class Attr {
     val totalItem: Int = 0
 }
 
-data class SalesOrder(
+data class Pdc(
         val id: String,
         val so_number: String,
         val customer_code :String,
