@@ -14,6 +14,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.content.ContextCompat
+import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.graphics.drawable.DrawerArrowDrawable
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     lateinit var arrowDrawable: DrawerArrowDrawable
     lateinit var toggle: ActionBarDrawerToggle
+    private var id = R.id.nav_home
 
 
     private lateinit var tabAdapter: LfPagerAdapter
@@ -92,9 +94,47 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+
+        showPage(id)
+
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
+    private fun showPage(id: Int) {
+        var title = ""
+        if (id == R.id.nav_home) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                binding.appBar.elevation = 0F
+            }
+            title = "Home"
+//            fragment = NewHomeFragment.newInstance()
+        } else if (id == R.id.nav_setting) {
+            title = "Sales schedules"
+//            fragment = SalesSchedulesFragment.newInstance()
+        } else if (id == R.id.nav_logout) {
+//            logOut()
+        }
+
+        val item = binding.navView.menu.findItem(id)
+        if (item.groupId == R.id.group_nav) {
+            try {
+                binding.tvTitle.text = title
+/*
+                this.id = id
+                supportActionBar?.setTitle(item.setChecked(true).title)
+                supportFragmentManager.beginTransaction()
+                        .replace(binding.contentFragment.getId(), fragment)
+                        .commitAllowingStateLoss()*/
+            } catch (e: Exception) {
+//                Crashlytics.logException(e)
+
+            }
+
+        }
+
+    }
     private fun updateOffset(slideOffset: Float) {
         binding.navView.alpha = slideOffset
         binding.coordinatorLayout.x = (binding.navView.width + 10f) * slideOffset
