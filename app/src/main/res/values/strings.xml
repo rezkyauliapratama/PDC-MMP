@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MMP-pdc</string>
+    <string name="app_name">MMP-pdcSchema</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
@@ -17,9 +17,9 @@
     <string name="credit_term">Credit term</string>
     <string name="detail_information">Detail information</string>
     <string name="approval_status">Approval status</string>
-    <string name="total_item">Total item</string>
+    <string name="total_item">Total itemSchema</string>
     <string name="no_items">No items</string>
-    <string name="list_item">List item</string>
+    <string name="list_item">List itemSchema</string>
     <string name="item_name">Item name</string>
     <string name="on">On</string>
     <string name="bp1">BP1</string>

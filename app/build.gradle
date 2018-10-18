@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "BASE_URL", "\"https://www.thesportsdb.com/\""
+        buildConfigField "String", "BASE_URL", "\"http://156.67.221.206/pdc/api/\""
 
     }
     buildTypes {
@@ -95,9 +95,11 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
 
     //networking
-    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+    implementation "com.rezkyaulia.library:light-networking:0.1"
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    //log
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'

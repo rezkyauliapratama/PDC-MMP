@@ -4,6 +4,8 @@
     package="android.rezkyauliapratama.com.mmppdc"
     >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"

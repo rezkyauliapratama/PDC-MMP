@@ -8,7 +8,7 @@ sealed class Attr {
     val totalItem: Int = 0
 }
 
-data class Pdc(
+data class PdcSchema(
         val id: String,
         val so_number: String,
         val customer_code :String,
@@ -22,5 +22,5 @@ data class Pdc(
         val created_date: String,
         val approve_date: String,
         val erp_response: String,
-        val items: List<Item>
+        val itemSchemas: List<ItemSchema>
 ): Attr()

@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:id="@+id/group_nav" android:checkableBehavior="single">
-        <item
+        <itemSchema
             android:id="@+id/nav_home"
             app:actionLayout="@layout/menu_item_layout"
             android:icon="@drawable/ic_home_white_24dp"
             android:title="@string/home" />
 
-        <item
+        <itemSchema
             android:id="@+id/nav_schedule"
             app:actionLayout="@layout/menu_item_layout"
             android:icon="@drawable/ic_logout"
@@ -18,15 +18,15 @@
 
     </group>
 
-    <item android:title="@string/more"
+    <itemSchema android:title="@string/more"
         >
         <menu>
 
-            <item
+            <itemSchema
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_logout"
                 android:title="@string/logout" />
         </menu>
-    </item>
+    </itemSchema>
 
 </menu>

@@ -3,7 +3,7 @@ package android.rezkyauliapratama.com.mmppdc.data.schema
 /**
  * Created by Rezky Aulia Pratama on 16/10/18.
  */
-data class Item (
+data class ItemSchema (
         val id : String,
         val so_id : String,
         val item_code : String,

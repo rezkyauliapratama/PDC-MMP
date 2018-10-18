@@ -1,16 +1,14 @@
 package android.rezkyauliapratama.com.mmppdc.di.application
 
-import android.rezkyauliapratama.com.mmppdc.BuildConfig
-import android.rezkyauliapratama.com.mmppdc.data.network.NetworkApi
+import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.rezkyaulia.android.light_optimization_data.NetworkClient
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 
 /**
@@ -32,28 +30,10 @@ class NetworkModule{
         return GsonBuilder().create()
     }
 
+    @Singleton
     @Provides
-    fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson))
-                .client(okHttpClient)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl(BuildConfig.BASE_URL).build()
+    internal fun provideHttpClient(@ApplicationContext context: Context): NetworkClient {
+        return NetworkClient(context)
     }
 
-
-    // This function need Retrofit object which we are passing in argument.
-    // We will not create Retrofit object in this function.
-    // Instead it will be injected/provided by Dagger2.
-    // Dagger2 will get Retrofit object from provideRetrofit function declared above.
-
-    @Provides
-    fun provideNetworkApi(retrofit: Retrofit): NetworkApi {
-        return retrofit.create(NetworkApi::class.java)
-    }
-
-  /*  @Provides
-    fun provideFetchEventUseCase(networkApi: NetworkApi) : FetchEventUseCase{
-        return FetchEventUseCase(networkApi)
-    }
-*/
 }

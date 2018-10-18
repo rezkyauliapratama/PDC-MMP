@@ -1,21 +1,40 @@
 package android.rezkyauliapratama.com.mmppdc.screens.login
 
+import android.rezkyauliapratama.com.mmppdc.data.DataManager
+import android.rezkyauliapratama.com.mmppdc.data.schema.UserSchema
 import android.rezkyauliapratama.com.mmppdc.screens.common.controller.BaseController
 import android.rezkyauliapratama.com.mmppdc.screens.common.screennavigator.ScreensNavigator
-import org.jetbrains.anko.ctx
+import com.google.gson.Gson
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.error
-import org.jetbrains.anko.startActivity
 
-class LoginController (val screensNavigator: ScreensNavigator) : BaseController(), LoginViewMvc.Listener{
+class LoginController (val screensNavigator: ScreensNavigator, val dataManager: DataManager) : BaseController(), LoginViewMvc.Listener{
+
 
     override fun onLogin(email: String, password: String) {
         error { "onLogin" }
         mViewMvc.showProgressIndication()
+        val userSchema = UserSchema(email = email, password = password)
+        compositeDisposable.add(
+                dataManager.api.
+                        login.doLogin(userSchema)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({it ->
+                            error { "it : ${Gson().toJson(it)}" }
+                            mViewMvc.hideProgressIndication()
 
-        //TODO change with business logic for login
-        screensNavigator.toMainActivity()
+                            screensNavigator.toMainActivity()
 
-        mViewMvc.hideProgressIndication()
+                        },{t: Throwable? ->
+                            error { "onerror login: ${Gson().toJson(t)}" }
+                            mViewMvc.hideProgressIndication()
+
+                        }
+                        ))
+
+
     }
 
 
@@ -27,9 +46,11 @@ class LoginController (val screensNavigator: ScreensNavigator) : BaseController(
 
     fun onStart(){
         mViewMvc.registerListener(this)
+
+        mViewMvc.hideProgressIndication()
     }
 
-    fun onStop(){
+    override fun onStop(){
         mViewMvc.unregisterListener(this)
     }
 

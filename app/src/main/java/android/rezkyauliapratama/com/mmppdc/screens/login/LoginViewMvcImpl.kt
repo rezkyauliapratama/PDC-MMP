@@ -3,7 +3,6 @@ package android.rezkyauliapratama.com.mmppdc.screens.login
 import android.databinding.DataBindingUtil
 import android.rezkyauliapratama.com.mmppdc.R
 import android.rezkyauliapratama.com.mmppdc.databinding.ActivityLoginBinding
-import android.rezkyauliapratama.com.mmppdc.screens.common.FragmentFrameHelper.FragmentFrameWrapper
 import android.rezkyauliapratama.com.mmppdc.screens.common.ViewMvcFactory
 import android.rezkyauliapratama.com.mmppdc.screens.common.views.BaseObservableViewMvc
 import android.view.LayoutInflater
@@ -22,7 +21,7 @@ class LoginViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFact
 
         binding.content?.btnLogin?.onClick {
             for(listener in listeners){
-                listener.onLogin("","")
+                listener.onLogin(binding.content?.etUsername?.text.toString(),binding.content?.etPassword?.text.toString())
             }
         }
 
@@ -36,8 +35,6 @@ class LoginViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFact
         binding.layoutProgress.visibility = View.GONE
 
     }
-
-
 
 
 }
