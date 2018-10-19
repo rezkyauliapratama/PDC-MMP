@@ -1,6 +1,7 @@
 package android.rezkyauliapratama.com.mmppdc.data.network
 
-import android.rezkyauliapratama.com.mmppdc.data.repository.LoginApi
+import android.rezkyauliapratama.com.mmppdc.data.network.api.LoginApi
+import android.rezkyauliapratama.com.mmppdc.data.network.api.SoApi
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -15,5 +16,8 @@ class ApiRepository @Inject constructor(){
 
     @Inject
     lateinit var login: LoginApi
+
+    @Inject
+    lateinit var so: SoApi
 
 }

@@ -1,13 +1,17 @@
 package android.rezkyauliapratama.com.mmppdc.data.schema
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 /**
  * Created by Rezky Aulia Pratama on 16/10/18.
  */
 sealed class Attr {
-    val isExpandable: Boolean = false
-    val totalItem: Int = 0
+    var isExpandable: Boolean = false
+    var totalItem: Int = 0
 }
 
+@Parcelize
 data class PdcSchema(
         val id: String,
         val so_number: String,
@@ -22,5 +26,5 @@ data class PdcSchema(
         val created_date: String,
         val approve_date: String,
         val erp_response: String,
-        val itemSchemas: List<ItemSchema>
-): Attr()
+        val items: List<ItemSchema>
+): Attr(), Parcelable

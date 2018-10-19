@@ -1,8 +1,12 @@
 package android.rezkyauliapratama.com.mmppdc.data.schema
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 /**
  * Created by Rezky Aulia Pratama on 16/10/18.
  */
+@Parcelize
 data class ItemSchema (
         val id : String,
         val so_id : String,
@@ -18,4 +22,4 @@ data class ItemSchema (
         val hna_per_pcs : String,
         val total_hna : String,
         val description : String
-)
+) : Parcelable

@@ -15,6 +15,13 @@ object ObjectUrl : AnkoLogger {
                 .build()
                 .toString()
     }
+    fun soWaiting(): String{
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+                .appendPath("salesorders")
+                .appendPath("get_so_waiting.json")
+                .build()
+                .toString()
+    }
 
 
 }

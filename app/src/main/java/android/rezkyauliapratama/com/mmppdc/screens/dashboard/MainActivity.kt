@@ -17,5 +17,14 @@ class MainActivity  : BaseActivity<MainController, MainViewMvc, ActivityMainBind
         mDataBinding = mViewMvc.dataBinding as ActivityMainBinding
     }
 
+    override fun onStart() {
+        super.onStart()
+        mController.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mController.onStop()
+    }
 
 }

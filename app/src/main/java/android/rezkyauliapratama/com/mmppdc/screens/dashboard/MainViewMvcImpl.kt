@@ -1,13 +1,16 @@
 package android.rezkyauliapratama.com.mmppdc.screens.dashboard
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.databinding.DataBindingUtil
 import android.graphics.Color
 import android.os.Build
 import android.rezkyauliapratama.com.mmppdc.R
 import android.rezkyauliapratama.com.mmppdc.databinding.ActivityMainBinding
 import android.rezkyauliapratama.com.mmppdc.screens.common.ViewMvcFactory
+import android.rezkyauliapratama.com.mmppdc.screens.common.views.BaseObservableViewMvc
 import android.rezkyauliapratama.com.mmppdc.screens.common.views.BaseViewMvc
+import android.rezkyauliapratama.com.mmppdc.screens.pdc.PdcFragment
 import android.rezkyauliapratama.com.mmppdc.utils.DimensionConverter
 import android.support.design.widget.NavigationView
 import android.support.design.widget.TabLayout
@@ -19,13 +22,14 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AlertDialog
 import android.support.v7.graphics.drawable.DrawerArrowDrawable
 import android.view.*
 import android.widget.LinearLayout
 import com.app.infideap.stylishwidget.view.ATextView
 
 class MainViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactory: ViewMvcFactory) :
-        BaseViewMvc(), MainViewMvc, NavigationView.OnNavigationItemSelectedListener{
+        BaseObservableViewMvc<MainViewMvc.Listener>(), MainViewMvc, NavigationView.OnNavigationItemSelectedListener{
 
 
     var binding : ActivityMainBinding = DataBindingUtil.inflate(inflater, R.layout.activity_main,parent,false)
@@ -49,6 +53,23 @@ class MainViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFacto
         initViewPager()
         initDrawableMenu()
 
+    }
+
+    fun logOut() {
+        val builder = getContext()?.let {
+            AlertDialog.Builder(it)
+                    .setMessage(R.string.logout_confirmation)
+
+                    .setPositiveButton(R.string.yes) { _, _ ->
+                        for(listener in listeners){
+                            listener.onLogout()
+                        }
+                    }
+                    .setNegativeButton(R.string.cancel) { dialog, _ -> dialog.cancel() }
+        }
+
+        val dialog = builder?.create()
+        dialog?.show()
     }
 
     private fun initDrawableMenu() {
@@ -116,11 +137,17 @@ class MainViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFacto
             title = "Home"
         } else if (id == R.id.nav_setting) {
             title = "Setting"
+        } else if (id == R.id.nav_logout){
+            logOut()
+            return
         }
 
         val item = binding.navView.menu.findItem(id)
         if (item.groupId == R.id.group_nav) {
             binding.tvTitle.text = title
+            for(listener in listeners){
+                listener.onDrawerMenuInteraction(id)
+            }
         }
 
     }
@@ -188,7 +215,7 @@ class MainViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFacto
     }
 
     private fun initViewPager() {
-        fragments.add(Fragment())
+        fragments.add(PdcFragment.newInstance())
         fragments.add(Fragment())
 
         fragment = fragments[0]

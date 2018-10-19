@@ -1,4 +1,4 @@
-package android.rezkyauliapratama.com.mmppdc.screens.dashboard
+package android.rezkyauliapratama.com.mmppdc.screens.pdc
 
 import android.rezkyauliapratama.com.mmppdc.R
 import android.rezkyauliapratama.com.mmppdc.data.schema.ItemSchema

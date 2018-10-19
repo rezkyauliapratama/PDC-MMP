@@ -1,4 +1,4 @@
-package android.rezkyauliapratama.com.mmppdc.data.repository
+package android.rezkyauliapratama.com.mmppdc.data.network.api
 
 import android.os.Parcelable
 import android.rezkyauliapratama.com.mmppdc.data.network.ObjectUrl
@@ -9,7 +9,6 @@ import io.reactivex.Single
 import kotlinx.android.parcel.Parcelize
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.error
-import java.util.*
 import javax.inject.Inject
 
 class LoginApi  @Inject constructor(private val networkClient: NetworkClient) : AnkoLogger {

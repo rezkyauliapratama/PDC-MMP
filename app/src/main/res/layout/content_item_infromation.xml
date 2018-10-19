@@ -49,9 +49,10 @@
             </LinearLayout>
 
             <com.app.infideap.stylishwidget.view.ATextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:gravity="center"
                 android:text="@string/discount"
                 android:textColor="@color/colorBlack_1000"
                 android:textAppearance="@style/TextStyle.Small"
@@ -300,8 +301,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/margin_small">
+                android:orientation="horizontal">
 
                 <com.app.infideap.stylishwidget.view.ATextView
                     android:layout_weight="0.4"
@@ -340,8 +340,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/margin_small">
+                android:orientation="horizontal">
 
                 <com.app.infideap.stylishwidget.view.ATextView
                     android:layout_weight="0.4"
@@ -380,8 +379,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/margin_small">
+                android:orientation="horizontal">
 
                 <com.app.infideap.stylishwidget.view.ATextView
                     android:layout_weight="0.4"
@@ -420,8 +418,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/margin_small">
+                android:orientation="horizontal">
 
                 <com.app.infideap.stylishwidget.view.ATextView
                     android:layout_weight="0.4"

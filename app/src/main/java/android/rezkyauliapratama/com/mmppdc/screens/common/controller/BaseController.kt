@@ -1,17 +1,7 @@
 package android.rezkyauliapratama.com.mmppdc.screens.common.controller
 
-import io.reactivex.disposables.CompositeDisposable
-import org.jetbrains.anko.AnkoLogger
+import android.rezkyauliapratama.com.mmppdc.data.BaseDisposable
 
-abstract class BaseController : AnkoLogger {
+abstract class BaseController : BaseDisposable() {
 
-    var compositeDisposable: CompositeDisposable
-
-    init {
-        compositeDisposable = CompositeDisposable()
-    }
-    open fun onStop(){
-        compositeDisposable.dispose()
-        compositeDisposable.clear()
-    }
 }

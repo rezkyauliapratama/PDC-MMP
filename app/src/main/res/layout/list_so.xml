@@ -1,105 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-    <LinearLayout
-        android:id="@+id/contentBody"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/margin_xsmall"
-        android:layout_marginBottom="@dimen/margin_small"
-        android:layout_marginLeft="@dimen/margin_small"
-        android:layout_marginRight="@dimen/margin_small"
-        android:padding="@dimen/margin_normal"
-        android:background="@drawable/layerlist_round_dash"
-        >
-
-        <include layout="@layout/content_so_information" android:id="@+id/content_soInformation"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:background="@color/colorLine"
-            />
-
-
-        <include layout="@layout/content_pdc_information" android:id="@+id/content_pdcInformation"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:background="@color/colorLine"
-            />
-
-
-        <FrameLayout
-            android:id="@+id/container_detailInformation"
+        app:cardCornerRadius="@dimen/margin_small"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/margin_small">
+        <LinearLayout
+            android:id="@+id/contentBody"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:padding="@dimen/margin_small"
+            android:background="@color/colorWhite"
+            >
 
-            <LinearLayout
-                android:id="@+id/container_rvListItem"
+            <include layout="@layout/content_so_information" android:id="@+id/content_soInformation"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@color/colorLine"
+                />
+
+
+            <include layout="@layout/content_pdc_information" android:id="@+id/content_pdcInformation"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@color/colorLine"
+                />
+
+
+            <FrameLayout
+                android:id="@+id/container_detailInformation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/container_rvListItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.app.infideap.stylishwidget.view.ATextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/list_item"
+                        android:textColor="@color/colorBlack_1000"
+                        android:textAppearance="@style/TextStyle.Small"
+                        />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_listItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/list_item"/>
+
+                </LinearLayout>
+
 
                 <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_noItems"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/size_image_48dp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/list_item"
+                    android:text="@string/no_items"
                     android:textColor="@color/colorBlack_1000"
-                    android:textAppearance="@style/TextStyle.Small"
+                    android:visibility="gone"
                     />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_listItem"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:listitem="@layout/list_item"/>
 
-            </LinearLayout>
+            </FrameLayout>
 
-
-            <com.app.infideap.stylishwidget.view.ATextView
-                android:id="@+id/tv_noItems"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/size_image_48dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/no_items"
-                android:textColor="@color/colorBlack_1000"
-                android:visibility="gone"
-                />
-
-
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorBlueGrey_600"
-            android:padding="@dimen/margin_small"
-            android:layout_marginTop="@dimen/margin_normal">
-
-            <com.app.infideap.stylishwidget.view.ATextView
-                android:id="@+id/tv_showMore"
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:id="@+id/button_detailInformation"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextStyle.Small"
-                android:text="@string/detail_information"
-                android:textColor="@color/colorWhite"
-                android:layout_gravity="center"
-                />
-        </FrameLayout>
-    </LinearLayout>
+                android:background="@drawable/selector_button_accent"
+                android:padding="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small">
+
+                <com.app.infideap.stylishwidget.view.ATextView
+                    android:id="@+id/tv_showMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextStyle.Small"
+                    android:text="@string/detail_information"
+                    android:textColor="@color/colorWhite"
+                    android:layout_gravity="center"
+                    />
+            </FrameLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 
 </layout>

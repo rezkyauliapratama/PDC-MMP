@@ -101,7 +101,8 @@ dependencies {
     //log
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.scottyab:secure-preferences-lib:0.1.4'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
     // Optional, if you use support library fragments:
