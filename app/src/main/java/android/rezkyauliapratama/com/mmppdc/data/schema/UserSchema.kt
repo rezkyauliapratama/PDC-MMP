@@ -6,8 +6,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class UserSchema(
         var id: String = "",
+        val userid: String,
         val name: String = "",
-        val email: String,
+        var email: String = "",
         val pin: String = "",
         val password: String
 ) : Parcelable

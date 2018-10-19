@@ -34,6 +34,7 @@ class LoginApi  @Inject constructor(private val networkClient: NetworkClient) : 
 
         try
         {
+            error { "user : ${Gson().toJson(user)}" }
             return with(networkClient){
                 cancelByTag(TAG)
                 withUrl(ObjectUrl.login())
@@ -51,6 +52,7 @@ class LoginApi  @Inject constructor(private val networkClient: NetworkClient) : 
 
     @Parcelize
     data class Response (
-            val user: UserSchema
+            val user: UserSchema,
+            val token: String
     ) : Parcelable
 }

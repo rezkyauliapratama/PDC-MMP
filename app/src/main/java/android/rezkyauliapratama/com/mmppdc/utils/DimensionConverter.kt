@@ -44,7 +44,7 @@ class DimensionConverter {
         return if (value > 0) 1 else -1
     }
 
-    fun stringToDimension(dimension: String, metrics: DisplayMetrics): Float {
+    fun stringToDimension(dimension: String, metrics: DisplayMetrics?): Float {
         // -- Mimics TypedValue.complexToDimension(int data, DisplayMetrics metrics).
         try {
             val internalDimension = stringToInternalDimension(dimension)

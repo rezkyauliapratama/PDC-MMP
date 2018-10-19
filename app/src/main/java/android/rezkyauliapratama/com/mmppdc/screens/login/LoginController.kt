@@ -12,9 +12,9 @@ import org.jetbrains.anko.error
 class LoginController (val screensNavigator: ScreensNavigator, val dataManager: DataManager) : BaseController(), LoginViewMvc.Listener{
 
 
-    override fun onLogin(email: String, password: String) {
+    override fun onLogin(userId: String, password: String) {
         mViewMvc.showProgressIndication()
-        val userSchema = UserSchema(email = email, password = password)
+        val userSchema = UserSchema(userid = userId, password = password)
         compositeDisposable.add(
                 dataManager.api.
                         login.doLogin(userSchema)

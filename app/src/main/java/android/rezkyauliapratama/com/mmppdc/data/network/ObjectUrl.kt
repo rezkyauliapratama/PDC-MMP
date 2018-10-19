@@ -10,6 +10,7 @@ object ObjectUrl : AnkoLogger {
 
     fun login(): String{
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+                .appendPath("users")
                 .appendPath("login.json")
                 .build()
                 .toString()
