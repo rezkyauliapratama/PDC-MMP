@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.list_so.view.*
+import kotlinx.android.synthetic.main.notification_template_lines_media.view.*
+import kotlinx.coroutines.experimental.selects.select
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
 class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerView.Adapter<PdcRvAdapter.ViewHolder>() {
@@ -39,11 +41,22 @@ class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerV
             expand(position)
         }
 
+        holder.binding.buttonSelect.onClick {
+            select(position)
+        }
+
+    }
+
+    private fun select(position: Int) {
+        val selected = mItems[position].isSelected
+        mItems[position].isSelected = !selected
+        // Notify the adapter that item has changed
+        notifyItemChanged(position)
     }
 
     private fun expand(position: Int) {
-        val expanded = mItems[position].isExpandable
-        mItems[position].isExpandable = !expanded
+        val expanded = mItems[position].isExpanded
+        mItems[position].isExpanded = !expanded
         // Notify the adapter that item has changed
         notifyItemChanged(position)
     }
@@ -51,7 +64,7 @@ class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerV
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         var binding: ListSoBinding = ListSoBinding.bind(itemView)
 
-        fun bindItem(pdcSchema: PdcSchema, clickListener: (PdcSchema) -> Unit){
+        fun bindItem(pdcSchema: PdcSchema, clickListener: (PdcSchema) -> Unit) {
 
             //so information
             binding.contentSoInformation?.tvCustomerCode?.text = pdcSchema.customer_code
@@ -65,19 +78,27 @@ class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerV
             binding.contentPdcInformation?.tvTotalItem?.text = pdcSchema.totalItem.toString()
             binding.contentPdcInformation?.tvApprovalStatus?.text = pdcSchema.approve_status
 
-            if(pdcSchema.totalItem > 0){
-                val adapter  = ItemsRvAdapter(pdcSchema.items)
+            if (pdcSchema.totalItem > 0) {
+                val adapter = ItemsRvAdapter(pdcSchema.items)
                 binding.containerDetailInformation.container_rvListItem.visibility = View.VISIBLE
                 binding.containerDetailInformation.container_rvListItem.rv_listItem.layoutManager = LinearLayoutManager(itemView.context)
                 binding.containerDetailInformation.container_rvListItem.rv_listItem.adapter = adapter
                 binding.containerDetailInformation.tv_noItems.visibility = View.GONE
-            }else{
+            } else {
                 binding.containerDetailInformation.tv_noItems.visibility = View.VISIBLE
                 binding.containerDetailInformation.container_rvListItem.visibility = View.GONE
             }
 
-            binding.containerDetailInformation.visibility = if (pdcSchema.isExpandable) View.VISIBLE else View.GONE
+            binding.containerDetailInformation.visibility = if (pdcSchema.isExpanded) View.VISIBLE else View.GONE
 
+            binding.buttonDetailInformation.tv_showMore.text = if (pdcSchema.isExpanded) itemView.resources.getString(R.string.hide_detail)
+            else itemView.resources.getString(R.string.show_detail)
+
+            binding.buttonSelect.tv_select.text = if (pdcSchema.isSelected) itemView.resources.getString(R.string.unselect)
+            else itemView.resources.getString(R.string.select)
+
+            binding.contentBody.background = if (pdcSchema.isSelected) itemView.resources.getDrawable(R.drawable.layerlist_round_dash_select)
+            else itemView.resources.getDrawable(R.drawable.layerlist_round_dash)
         }
     }
 

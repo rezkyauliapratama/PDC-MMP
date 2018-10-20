@@ -37,4 +37,8 @@
     <string name="logout_confirmation">Do you want to logout ?</string>
     <string name="yes">Yes</string>
     <string name="cancel">Cancel</string>
+    <string name="select">Select</string>
+    <string name="hide_detail">Hide detail information</string>
+    <string name="show_detail">Show detail information</string>
+    <string name="unselect">Unselect</string>
 </resources>

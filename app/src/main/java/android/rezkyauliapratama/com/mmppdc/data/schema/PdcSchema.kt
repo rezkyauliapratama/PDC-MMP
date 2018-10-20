@@ -7,8 +7,9 @@ import kotlinx.android.parcel.Parcelize
  * Created by Rezky Aulia Pratama on 16/10/18.
  */
 sealed class Attr {
-    var isExpandable: Boolean = false
+    var isExpanded: Boolean = false
     var totalItem: Int = 0
+    var isSelected: Boolean = false
 }
 
 @Parcelize
