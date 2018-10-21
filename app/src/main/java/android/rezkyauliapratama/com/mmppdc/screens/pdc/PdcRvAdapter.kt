@@ -99,6 +99,8 @@ class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerV
 
             binding.contentBody.background = if (pdcSchema.isSelected) itemView.resources.getDrawable(R.drawable.layerlist_round_dash_select)
             else itemView.resources.getDrawable(R.drawable.layerlist_round_dash)
+
+//            binding.buttonSelect.visibility = if (pdcSchema.approve_status)
         }
     }
 

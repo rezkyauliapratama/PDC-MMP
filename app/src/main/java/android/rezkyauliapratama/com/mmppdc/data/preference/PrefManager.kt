@@ -1,7 +1,11 @@
 package android.rezkyauliapratama.com.mmppdc.data.preference
 
 import com.securepreferences.SecurePreferences
+import javax.inject.Inject
+import javax.inject.Singleton
 
+
+@Singleton
 class PrefManager(val preference: SecurePreferences){
     private val TOKEN = "TOKEN"
 
