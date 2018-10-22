@@ -6,6 +6,8 @@ import android.rezkyauliapratama.com.mmppdc.screens.login.LoginViewMvc
 import android.rezkyauliapratama.com.mmppdc.screens.login.LoginViewMvcImpl
 import android.rezkyauliapratama.com.mmppdc.screens.pdc.history.HistoryViewMvc
 import android.rezkyauliapratama.com.mmppdc.screens.pdc.history.HistoryViewMvcImpl
+import android.rezkyauliapratama.com.mmppdc.screens.pdc.pdclistitem.PdcListItemViewMvc
+import android.rezkyauliapratama.com.mmppdc.screens.pdc.pdclistitem.PdcListItemViewMvcImpl
 import android.rezkyauliapratama.com.mmppdc.screens.pdc.waiting.PdcViewMvc
 import android.rezkyauliapratama.com.mmppdc.screens.pdc.waiting.PdcViewMvcImpl
 import android.rezkyauliapratama.com.mmppdc.utils.Constant
@@ -30,6 +32,9 @@ class ViewMvcFactory(private val mLayoutInflater: LayoutInflater) {
 
     fun getHistoryViewMvc(parent: ViewGroup?, constant: Constant): HistoryViewMvc {
         return HistoryViewMvcImpl(mLayoutInflater, parent, this, constant)
+    }
 
+    fun getPdcListItemViewMvc(parent: ViewGroup): PdcListItemViewMvc {
+        return PdcListItemViewMvcImpl(mLayoutInflater, parent)
     }
 }

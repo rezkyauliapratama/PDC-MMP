@@ -11,11 +11,12 @@ import android.rezkyauliapratama.com.mmppdc.utils.Constant
 import android.rezkyauliapratama.com.mmppdc.utils.FormatNumber
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 
 
 class HistoryViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactory: ViewMvcFactory,  constant: Constant) :
-        BaseObservableViewMvc<HistoryViewMvc.Listener>(), HistoryViewMvc {
+        BaseObservableViewMvc<HistoryViewMvc.Listener>(), HistoryViewMvc, PdcRvAdapter.Listener {
 
 
     var binding : FragmentListSoBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_list_so,parent,false)
@@ -25,16 +26,16 @@ class HistoryViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFa
         dataBinding = binding
 
 
-        adapter = PdcRvAdapter(constant) { pdc: PdcSchema -> detailInformationClicked(pdc) }
+        adapter = PdcRvAdapter(viewMvcFactory,this,constant)
         binding.rvListSo.layoutManager = LinearLayoutManager(getContext())
         binding.rvListSo.adapter = adapter
 
         binding.swipeRefreshListSo.isEnabled = false
+
+        binding.fab.visibility = View.GONE
     }
 
-
-
-    private fun detailInformationClicked(pdc: PdcSchema) {
+    override fun onPdcSelected(listPdc: List<PdcSchema>) {
 
     }
 

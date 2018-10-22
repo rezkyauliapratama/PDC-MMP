@@ -61,17 +61,6 @@
 
                 <include layout="@layout/content_dashboard" android:id="@+id/content"/>
 
-                <com.aniket.mutativefloatingactionbutton.MutativeFab
-                    android:id="@+id/fab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:fabIcon="@drawable/ic_check_white_24dp"
-                    app:fabText="relocate"
-                    android:layout_alignParentBottom="true"
-                    app:fabBackgroundColor="@android:color/white"
-                    app:fabTextColor="@color/colorPrimary"
-                    android:layout_alignParentEnd="true"/>
-
             </android.support.design.widget.CoordinatorLayout>
 
         </RelativeLayout>

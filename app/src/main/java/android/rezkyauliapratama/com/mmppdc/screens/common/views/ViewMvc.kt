@@ -5,5 +5,5 @@ import android.view.View
 
 
 interface ViewMvc {
-    var dataBinding : ViewDataBinding?
+    var dataBinding : ViewDataBinding
 }

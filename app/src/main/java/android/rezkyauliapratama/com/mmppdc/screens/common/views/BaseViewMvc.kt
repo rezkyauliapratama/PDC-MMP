@@ -7,10 +7,10 @@ import android.support.annotation.StringRes
 
 abstract class BaseViewMvc: ViewMvc {
 
-    override var dataBinding: ViewDataBinding? = null
+    override lateinit var dataBinding: ViewDataBinding
 
     protected fun getContext(): Context? {
-        return dataBinding?.root?.context
+        return dataBinding.root.context
     }
 
     protected fun getString(@StringRes id: Int): String? {
