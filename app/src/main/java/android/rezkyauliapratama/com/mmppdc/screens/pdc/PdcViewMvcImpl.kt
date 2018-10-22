@@ -6,11 +6,13 @@ import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.databinding.FragmentListSoBinding
 import android.rezkyauliapratama.com.mmppdc.screens.common.ViewMvcFactory
 import android.rezkyauliapratama.com.mmppdc.screens.common.views.BaseObservableViewMvc
+import android.rezkyauliapratama.com.mmppdc.utils.Constant
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import javax.inject.Inject
 
-class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactory: ViewMvcFactory) :
+class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactory: ViewMvcFactory,val constant: Constant) :
         BaseObservableViewMvc<PdcViewMvc.Listener>(), PdcViewMvc{
 
 
@@ -21,7 +23,7 @@ class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactor
         dataBinding = binding
 
 
-        adapter = PdcRvAdapter { pdc: PdcSchema -> detailInformationClicked(pdc) }
+        adapter = PdcRvAdapter(constant){ pdc: PdcSchema -> detailInformationClicked(pdc) }
         binding.rvListSo.layoutManager = LinearLayoutManager(getContext())
         binding.rvListSo.adapter = adapter
     }

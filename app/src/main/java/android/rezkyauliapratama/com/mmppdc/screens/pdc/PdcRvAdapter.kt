@@ -3,6 +3,7 @@ package android.rezkyauliapratama.com.mmppdc.screens.pdc
 import android.rezkyauliapratama.com.mmppdc.R
 import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.databinding.ListSoBinding
+import android.rezkyauliapratama.com.mmppdc.utils.Constant
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -13,7 +14,7 @@ import kotlinx.android.synthetic.main.notification_template_lines_media.view.*
 import kotlinx.coroutines.experimental.selects.select
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
-class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerView.Adapter<PdcRvAdapter.ViewHolder>() {
+class PdcRvAdapter(private val constant: Constant, private val clickListener : (PdcSchema) -> Unit) : RecyclerView.Adapter<PdcRvAdapter.ViewHolder>() {
 
     private val mItems: MutableList<PdcSchema> = mutableListOf()
 
@@ -35,7 +36,7 @@ class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerV
     override fun getItemCount() = mItems.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(mItems[position], clickListener)
+        holder.bindItem(mItems[position], constant, clickListener)
 
         holder.binding.buttonDetailInformation.onClick {
             expand(position)
@@ -64,7 +65,7 @@ class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerV
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         var binding: ListSoBinding = ListSoBinding.bind(itemView)
 
-        fun bindItem(pdcSchema: PdcSchema, clickListener: (PdcSchema) -> Unit) {
+        fun bindItem(pdcSchema: PdcSchema, constant: Constant, clickListener: (PdcSchema) -> Unit) {
 
             //so information
             binding.contentSoInformation?.tvCustomerCode?.text = pdcSchema.customer_code
@@ -100,7 +101,7 @@ class PdcRvAdapter( private val clickListener : (PdcSchema) -> Unit) : RecyclerV
             binding.contentBody.background = if (pdcSchema.isSelected) itemView.resources.getDrawable(R.drawable.layerlist_round_dash_select)
             else itemView.resources.getDrawable(R.drawable.layerlist_round_dash)
 
-//            binding.buttonSelect.visibility = if (pdcSchema.approve_status)
+            binding.buttonSelect.visibility = if (pdcSchema.approve_status.equals(constant.PDC_WAITING)) View.VISIBLE else View.GONE
         }
     }
 

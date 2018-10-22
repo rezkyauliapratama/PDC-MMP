@@ -3,11 +3,15 @@ package android.rezkyauliapratama.com.mmppdc.screens.pdc
 import android.os.Bundle
 import android.rezkyauliapratama.com.mmppdc.databinding.FragmentListSoBinding
 import android.rezkyauliapratama.com.mmppdc.screens.common.controller.BaseFragment
-import android.support.v4.app.Fragment
+import android.rezkyauliapratama.com.mmppdc.utils.Constant
 import android.view.View
 import android.view.ViewGroup
+import javax.inject.Inject
 
 class PdcFragment :  BaseFragment<PdcController, PdcViewMvc, FragmentListSoBinding>(){
+
+    @Inject
+    lateinit var constant: Constant
 
     companion object {
         fun newInstance (): PdcFragment {
@@ -21,7 +25,7 @@ class PdcFragment :  BaseFragment<PdcController, PdcViewMvc, FragmentListSoBindi
     }
 
     override fun initView(container: ViewGroup?) {
-        mViewMvc = viewMvcFactory.getPdvMvcView(container)
+        mViewMvc = viewMvcFactory.getPdvMvcView(container, constant)
         mController.bindView(mViewMvc)
     }
 
