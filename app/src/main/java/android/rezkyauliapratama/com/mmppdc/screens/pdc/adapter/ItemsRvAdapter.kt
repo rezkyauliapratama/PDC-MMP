@@ -1,4 +1,4 @@
-package android.rezkyauliapratama.com.mmppdc.screens.pdc
+package android.rezkyauliapratama.com.mmppdc.screens.pdc.adapter
 
 import android.rezkyauliapratama.com.mmppdc.R
 import android.rezkyauliapratama.com.mmppdc.data.schema.ItemSchema
@@ -29,7 +29,7 @@ class ItemsRvAdapter(private val listItemSchemas: List<ItemSchema>) : RecyclerVi
 
             //ItemSchema information
             binding.content?.tvItemName?.text = itemSchema.item_name
-            binding.content?.tvDiscountOn?.text = itemSchema.discoount_on
+            binding.content?.tvDiscountOn?.text = itemSchema.discount_on
             binding.content?.tvDiscountBp1?.text = itemSchema.discount_bp1
             binding.content?.tvDiscountBp2?.text = itemSchema.discount_bp2
             binding.content?.tvTotalDiscount?.text = itemSchema.discount_total

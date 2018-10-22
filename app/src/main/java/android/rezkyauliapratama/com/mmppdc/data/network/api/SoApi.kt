@@ -25,6 +25,19 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
         }
 
     }
+
+    fun getSoHistory() : Single<Response> {
+        return Single.create<Response> { emitter ->
+            try {
+                soHistory()
+                        .apply { emitter.onSuccess(this) }
+            } catch (e: Exception) {
+                emitter.onError(e)
+            }
+        }
+
+    }
+
     private fun soWaiting() : Response
     {
         val tag = "soWaiting"
@@ -33,6 +46,26 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
             return with(networkClient){
                 cancelByTag(tag)
                 withUrl(ObjectUrl.soWaiting())
+                        .initAs(Response::class.java)
+                        .setHeaders(getUserHeaderWithToken().build())
+                        .setTag(tag)
+                        .syncFuture
+            }
+        } catch (e: Exception) {
+            throw e
+        }
+
+    }
+
+
+    private fun soHistory() : Response
+    {
+        val tag = "soHistory"
+        try
+        {
+            return with(networkClient){
+                cancelByTag(tag)
+                withUrl(ObjectUrl.soHistory())
                         .initAs(Response::class.java)
                         .setHeaders(getUserHeaderWithToken().build())
                         .setTag(tag)

@@ -8,18 +8,18 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class ItemSchema (
-        val id : String,
-        val so_id : String,
-        val item_code : String,
-        val item_name : String,
-        val discoount_on : String,
-        val discount_bp1 : String,
-        val discount_bp2 : String,
-        val discount_total : String,
-        val discount_max : String,
-        val hpp_cab : String,
-        val unit : String,
-        val hna_per_pcs : String,
-        val total_hna : String,
-        val description : String
+        var id : String,
+        var so_id : String,
+        var item_code : String,
+        var item_name : String,
+        var discount_on : String,
+        var discount_bp1 : String,
+        var discount_bp2 : String,
+        var discount_total : String,
+        var discount_max : String,
+        var hpp_cab : String,
+        var unit : String,
+        var hna_per_pcs : String,
+        var total_hna : String,
+        var description : String
 ) : Parcelable

@@ -6,7 +6,8 @@ import android.rezkyauliapratama.com.mmppdc.data.repository.PdcUseCase
 import android.rezkyauliapratama.com.mmppdc.screens.common.screennavigator.ScreensNavigator
 import android.rezkyauliapratama.com.mmppdc.screens.dashboard.MainController
 import android.rezkyauliapratama.com.mmppdc.screens.login.LoginController
-import android.rezkyauliapratama.com.mmppdc.screens.pdc.PdcController
+import android.rezkyauliapratama.com.mmppdc.screens.pdc.history.HistoryController
+import android.rezkyauliapratama.com.mmppdc.screens.pdc.waiting.PdcController
 import dagger.Module
 import dagger.Provides
 
@@ -23,7 +24,12 @@ class ControllerModule {
     }
 
     @Provides
-    fun getPdcController(screensNavigator: ScreensNavigator, pdcUseCase: PdcUseCase) : PdcController{
+    fun getPdcController(screensNavigator: ScreensNavigator, pdcUseCase: PdcUseCase) : PdcController {
         return PdcController(screensNavigator, pdcUseCase)
+    }
+
+    @Provides
+    fun getHistoryController(screensNavigator: ScreensNavigator, pdcUseCase: PdcUseCase) : HistoryController {
+        return HistoryController(screensNavigator, pdcUseCase)
     }
 }

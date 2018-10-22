@@ -1,4 +1,4 @@
-package android.rezkyauliapratama.com.mmppdc.screens.pdc
+package android.rezkyauliapratama.com.mmppdc.screens.pdc.waiting
 
 import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.screens.common.views.ObservableViewMvc

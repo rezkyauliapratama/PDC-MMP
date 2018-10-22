@@ -1,4 +1,4 @@
-package android.rezkyauliapratama.com.mmppdc.screens.pdc
+package android.rezkyauliapratama.com.mmppdc.screens.pdc.waiting
 
 import android.os.Bundle
 import android.rezkyauliapratama.com.mmppdc.databinding.FragmentListSoBinding

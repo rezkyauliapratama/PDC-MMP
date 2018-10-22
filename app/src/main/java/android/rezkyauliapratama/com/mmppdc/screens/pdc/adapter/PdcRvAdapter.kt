@@ -1,17 +1,16 @@
-package android.rezkyauliapratama.com.mmppdc.screens.pdc
+package android.rezkyauliapratama.com.mmppdc.screens.pdc.adapter
 
 import android.rezkyauliapratama.com.mmppdc.R
 import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.databinding.ListSoBinding
 import android.rezkyauliapratama.com.mmppdc.utils.Constant
+import android.rezkyauliapratama.com.mmppdc.utils.FormatNumber
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.list_so.view.*
-import kotlinx.android.synthetic.main.notification_template_lines_media.view.*
-import kotlinx.coroutines.experimental.selects.select
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
 class PdcRvAdapter(private val constant: Constant, private val clickListener : (PdcSchema) -> Unit) : RecyclerView.Adapter<PdcRvAdapter.ViewHolder>() {

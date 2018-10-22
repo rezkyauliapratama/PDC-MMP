@@ -27,5 +27,5 @@ data class PdcSchema(
         val created_date: String,
         val approve_date: String,
         val erp_response: String,
-        val items: List<ItemSchema>
+        var items: List<ItemSchema>
 ): Attr(), Parcelable

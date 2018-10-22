@@ -1,7 +1,6 @@
 package android.rezkyauliapratama.com.mmppdc.screens.dashboard
 
 import android.app.Activity
-import android.content.DialogInterface
 import android.databinding.DataBindingUtil
 import android.graphics.Color
 import android.os.Build
@@ -9,8 +8,8 @@ import android.rezkyauliapratama.com.mmppdc.R
 import android.rezkyauliapratama.com.mmppdc.databinding.ActivityMainBinding
 import android.rezkyauliapratama.com.mmppdc.screens.common.ViewMvcFactory
 import android.rezkyauliapratama.com.mmppdc.screens.common.views.BaseObservableViewMvc
-import android.rezkyauliapratama.com.mmppdc.screens.common.views.BaseViewMvc
-import android.rezkyauliapratama.com.mmppdc.screens.pdc.PdcFragment
+import android.rezkyauliapratama.com.mmppdc.screens.pdc.history.HistoryFragment
+import android.rezkyauliapratama.com.mmppdc.screens.pdc.waiting.PdcFragment
 import android.rezkyauliapratama.com.mmppdc.utils.DimensionConverter
 import android.support.design.widget.NavigationView
 import android.support.design.widget.TabLayout
@@ -216,7 +215,7 @@ class MainViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFacto
 
     private fun initViewPager() {
         fragments.add(PdcFragment.newInstance())
-        fragments.add(Fragment())
+        fragments.add(HistoryFragment.newInstance())
 
         fragment = fragments[0]
         this.tabAdapter = LfPagerAdapter((getContext() as FragmentActivity).supportFragmentManager, fragments)

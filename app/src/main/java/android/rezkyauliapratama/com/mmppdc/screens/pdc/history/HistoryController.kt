@@ -1,24 +1,24 @@
-package android.rezkyauliapratama.com.mmppdc.screens.pdc
+package android.rezkyauliapratama.com.mmppdc.screens.pdc.history
 
 import android.rezkyauliapratama.com.mmppdc.data.repository.PdcUseCase
 import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.screens.common.controller.BaseController
 import android.rezkyauliapratama.com.mmppdc.screens.common.screennavigator.ScreensNavigator
-import org.jetbrains.anko.error
-
-class PdcController(private val screensNavigator: ScreensNavigator, private val pdcUseCase: PdcUseCase): BaseController(),
-        PdcViewMvc.Listener, PdcUseCase.Listener{
 
 
-    private lateinit var mViewMvc: PdcViewMvc
+class HistoryController(private val screensNavigator: ScreensNavigator, private val pdcUseCase: PdcUseCase): BaseController(),
+        HistoryViewMvc.Listener, PdcUseCase.Listener{
 
-    fun bindView(viewMvc: PdcViewMvc) {
+
+    private lateinit var mViewMvc: HistoryViewMvc
+
+    fun bindView(viewMvc: HistoryViewMvc) {
         mViewMvc = viewMvc
     }
 
     fun fetchData(){
         mViewMvc.showProgressIndication()
-        pdcUseCase.PdcWaitingStatusAndNotify()
+        pdcUseCase.PdcHistoryAndNotify()
     }
     override fun onClickDetailInformation() {
         error { "onClickDetailInformation" }
