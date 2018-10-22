@@ -26,6 +26,9 @@ class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactor
         adapter = PdcRvAdapter(constant) { pdc: PdcSchema -> detailInformationClicked(pdc) }
         binding.rvListSo.layoutManager = LinearLayoutManager(getContext())
         binding.rvListSo.adapter = adapter
+
+        binding.swipeRefreshListSo.isEnabled = false
+
     }
 
 

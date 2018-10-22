@@ -8,6 +8,7 @@ import android.rezkyauliapratama.com.mmppdc.screens.login.LoginViewMvc
 class MainController(val screensNavigator: ScreensNavigator, val dataManager: DataManager) : BaseController(), MainViewMvc.Listener{
 
     override fun onLogout() {
+        dataManager.preference.setToken("")
         screensNavigator.toLogOut()
     }
 

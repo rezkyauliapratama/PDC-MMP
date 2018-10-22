@@ -28,6 +28,8 @@ class HistoryViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFa
         adapter = PdcRvAdapter(constant) { pdc: PdcSchema -> detailInformationClicked(pdc) }
         binding.rvListSo.layoutManager = LinearLayoutManager(getContext())
         binding.rvListSo.adapter = adapter
+
+        binding.swipeRefreshListSo.isEnabled = false
     }
 
 

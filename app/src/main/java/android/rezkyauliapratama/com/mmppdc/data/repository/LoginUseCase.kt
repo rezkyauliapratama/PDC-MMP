@@ -13,8 +13,14 @@ import javax.inject.Inject
 class LoginUseCase @Inject constructor(val dataManager: DataManager) : ApiObservable<LoginUseCase.Listener>() {
 
     interface Listener {
-        fun onLoginSuccess(response: LoginApi.Response)
+        fun onLoginSuccess()
         fun onLoginFailure(message: String)
+    }
+
+    fun isDirectToMainActivity(){
+        if (!dataManager.preference.getToken().isBlank()){
+            notifySuccess()
+        }
     }
 
     fun loginAndNotify(userSchema: UserSchema){
@@ -26,7 +32,7 @@ class LoginUseCase @Inject constructor(val dataManager: DataManager) : ApiObserv
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ response ->
                     dataManager.preference.setToken(response.token)
-                    notifySuccess(response)
+                    notifySuccess()
 
                 }) { throwable ->
                     notifyFailure(throwable.localizedMessage)
@@ -40,10 +46,10 @@ class LoginUseCase @Inject constructor(val dataManager: DataManager) : ApiObserv
         }
     }
 
-    private fun notifySuccess(response: LoginApi.Response) {
+    private fun notifySuccess() {
 
         for (listener in listeners) {
-            listener.onLoginSuccess(response)
+            listener.onLoginSuccess()
         }
     }
 

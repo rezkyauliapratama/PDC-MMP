@@ -28,10 +28,8 @@ class LoginController (val screensNavigator: ScreensNavigator, val loginUseCase:
         mViewMvc = viewMvc
     }
 
-    override fun onLoginSuccess(response: LoginApi.Response) {
+    override fun onLoginSuccess() {
         mViewMvc.hideProgressIndication()
-        error { "success : ${Gson().toJson(response)}" }
-
         screensNavigator.toMainActivity()
     }
 
@@ -46,6 +44,9 @@ class LoginController (val screensNavigator: ScreensNavigator, val loginUseCase:
         mViewMvc.registerListener(this)
         mViewMvc.hideProgressIndication()
         loginUseCase.registerListener(this)
+
+        loginUseCase.isDirectToMainActivity()
+
     }
 
     override fun onStop(){
