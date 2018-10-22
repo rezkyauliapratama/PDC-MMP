@@ -101,6 +101,7 @@ dependencies {
     //log
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
+    implementation 'com.github.aniketbhoite:MutativeFab:1.0.8'
     implementation 'com.scottyab:secure-preferences-lib:0.1.4'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
