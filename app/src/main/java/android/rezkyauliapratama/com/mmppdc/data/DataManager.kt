@@ -1,5 +1,6 @@
 package android.rezkyauliapratama.com.mmppdc.data
 
+import android.rezkyauliapratama.com.mmppdc.data.EventBus.RxBus
 import android.rezkyauliapratama.com.mmppdc.data.network.ApiRepository
 import android.rezkyauliapratama.com.mmppdc.data.preference.PrefManager
 import javax.inject.Inject
@@ -14,5 +15,7 @@ class DataManager @Inject constructor(){
     @Inject
     lateinit var preference: PrefManager
 
+    @Inject
+    lateinit var rxBus: RxBus
 
 }

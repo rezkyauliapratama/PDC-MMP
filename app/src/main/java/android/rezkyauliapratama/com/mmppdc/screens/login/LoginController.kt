@@ -49,8 +49,7 @@ class LoginController (val screensNavigator: ScreensNavigator, val loginUseCase:
 
     }
 
-    override fun onStop(){
-        super.onStop()
+    fun onStop(){
         mViewMvc.unregisterListener(this)
         loginUseCase.unregisterListener(this)
     }

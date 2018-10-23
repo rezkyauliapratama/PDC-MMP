@@ -1,7 +1,5 @@
 package android.rezkyauliapratama.com.mmppdc.screens.common.controller
 
-import android.rezkyauliapratama.com.mmppdc.data.BaseDisposable
+import org.jetbrains.anko.AnkoLogger
 
-abstract class BaseController : BaseDisposable() {
-
-}
+abstract class BaseController: AnkoLogger

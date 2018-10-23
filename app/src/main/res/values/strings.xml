@@ -41,4 +41,7 @@
     <string name="hide_detail">Hide detail information</string>
     <string name="show_detail">Show detail information</string>
     <string name="unselect">Unselect</string>
+    <string name="action_approve_confirmation">Please select your action</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
 </resources>

@@ -33,13 +33,10 @@ class HistoryFragment :  BaseFragment<HistoryController, HistoryViewMvc, Fragmen
         mDataBinding = mViewMvc.dataBinding as FragmentListSoBinding
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        mController.fetchData()
-    }
     override fun onStart() {
         super.onStart()
         mController.onStart()
+        mController.fetchData()
     }
 
     override fun onStop() {

@@ -26,8 +26,7 @@ class MainController(val screensNavigator: ScreensNavigator, val dataManager: Da
         mViewMvc.registerListener(this)
     }
 
-    override fun onStop(){
-        super.onStop()
+    fun onStop(){
         mViewMvc.unregisterListener(this)
     }
 

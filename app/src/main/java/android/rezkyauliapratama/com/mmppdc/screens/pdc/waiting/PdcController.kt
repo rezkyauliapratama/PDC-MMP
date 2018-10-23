@@ -8,14 +8,12 @@ import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.screens.common.controller.BaseController
 import android.rezkyauliapratama.com.mmppdc.screens.common.screennavigator.ScreensNavigator
 import com.google.gson.Gson
+import com.rezkyaulia.android.light_optimization_data.NetworkClient
 import org.jetbrains.anko.error
 
 class PdcController(private val screensNavigator: ScreensNavigator, private val pdcUseCase: PdcUseCase, private val approvalUseCase: ApprovalUseCase): BaseController(),
         PdcViewMvc.Listener, PdcUseCase.Listener, ApprovalUseCase.Listener{
-
-
-
-    override fun onSelectPDC(listPdc: MutableList<PdcSchema>) {
+    override fun onApprovePDC(listPdc: MutableList<PdcSchema>) {
         error { "select : ${Gson().toJson(listPdc)}" }
         if (listPdc.isNotEmpty()){
 
@@ -24,6 +22,21 @@ class PdcController(private val screensNavigator: ScreensNavigator, private val 
                 arrString.add(value.id)
             }
             val approvalSchema = ApprovalSchema("approve",arrString)
+            mViewMvc.showProgressIndication()
+            approvalUseCase.approvalAndNotify(approvalSchema)
+
+        }
+    }
+
+    override fun onRejectPDC(listPdc: MutableList<PdcSchema>) {
+        error { "select : ${Gson().toJson(listPdc)}" }
+        if (listPdc.isNotEmpty()){
+
+            val arrString: MutableList<String> = mutableListOf()
+            for ((index, value) in listPdc.withIndex()){
+                arrString.add(value.id)
+            }
+            val approvalSchema = ApprovalSchema("reject",arrString)
             mViewMvc.showProgressIndication()
             approvalUseCase.approvalAndNotify(approvalSchema)
 
@@ -54,12 +67,13 @@ class PdcController(private val screensNavigator: ScreensNavigator, private val 
     override fun onFetchPdcFailure(message: String) {
         error { "onFetchPdcFailure : $message" }
         mViewMvc.hideProgressIndication()
-
     }
 
     override fun onFetchApprovalSuccess(response: SoApi.ApprovalResponse) {
-        mViewMvc.hideProgressIndication()
+        mViewMvc.hideFabIndication()
         error { "approval success : ${Gson().toJson(response)}" }
+        pdcUseCase.PdcWaitingStatusAndNotify()
+        pdcUseCase.sendStatusToRefreshHistory(response)
 
     }
 
@@ -69,13 +83,15 @@ class PdcController(private val screensNavigator: ScreensNavigator, private val 
     }
 
     fun onStart(){
+        error { "onstart" }
         mViewMvc.registerListener(this)
         pdcUseCase.registerListener(this)
         approvalUseCase.registerListener(this)
     }
 
-    override fun onStop(){
-        super.onStop()
+    fun onStop(){
+        error { "onstop" }
+
         mViewMvc.unregisterListener(this)
         pdcUseCase.unregisterListener(this)
         approvalUseCase.unregisterListener(this)

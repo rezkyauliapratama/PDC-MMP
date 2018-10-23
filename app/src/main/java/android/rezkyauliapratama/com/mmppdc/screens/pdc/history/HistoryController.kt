@@ -4,6 +4,7 @@ import android.rezkyauliapratama.com.mmppdc.data.repository.PdcUseCase
 import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.screens.common.controller.BaseController
 import android.rezkyauliapratama.com.mmppdc.screens.common.screennavigator.ScreensNavigator
+import org.jetbrains.anko.error
 
 
 class HistoryController(private val screensNavigator: ScreensNavigator, private val pdcUseCase: PdcUseCase): BaseController(),
@@ -19,6 +20,8 @@ class HistoryController(private val screensNavigator: ScreensNavigator, private 
     fun fetchData(){
         mViewMvc.showProgressIndication()
         pdcUseCase.PdcHistoryAndNotify()
+        pdcUseCase.receiveStatusToRefreshHistory()
+
     }
     override fun onClickDetailInformation() {
         error { "onClickDetailInformation" }
@@ -40,8 +43,7 @@ class HistoryController(private val screensNavigator: ScreensNavigator, private 
         pdcUseCase.registerListener(this)
     }
 
-    override fun onStop(){
-        super.onStop()
+    fun onStop(){
         mViewMvc.unregisterListener(this)
         pdcUseCase.unregisterListener(this)
     }

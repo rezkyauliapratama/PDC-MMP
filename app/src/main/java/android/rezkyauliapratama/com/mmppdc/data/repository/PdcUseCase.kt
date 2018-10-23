@@ -1,6 +1,7 @@
 package android.rezkyauliapratama.com.mmppdc.data.repository
 
 import android.rezkyauliapratama.com.mmppdc.data.DataManager
+import android.rezkyauliapratama.com.mmppdc.data.network.api.SoApi
 import android.rezkyauliapratama.com.mmppdc.data.schema.ItemSchema
 import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import android.rezkyauliapratama.com.mmppdc.utils.FormatNumber
@@ -16,8 +17,21 @@ class PdcUseCase @Inject constructor(val dataManager: DataManager, val formatNum
         fun onFetchPdcFailure(message: String)
     }
 
+    fun sendStatusToRefreshHistory(response: SoApi.ApprovalResponse){
+        dataManager.rxBus.post(response)
+    }
+
+    fun receiveStatusToRefreshHistory(){
+        compositeDisposable.add(
+            dataManager.rxBus.observable(SoApi.ApprovalResponse::class.java)
+                    .subscribe { PdcHistoryAndNotify()}
+        )
+
+
+    }
+
     fun PdcWaitingStatusAndNotify(){
-        dataManager.api
+        compositeDisposable.add(dataManager.api
                 .so
                 .getSoWaiting()
                 .subscribeOn(Schedulers.io())
@@ -38,11 +52,11 @@ class PdcUseCase @Inject constructor(val dataManager: DataManager, val formatNum
                     notifySuccess(response)
                 }) { throwable ->
                     notifyFailure(throwable.localizedMessage)
-                }
+                })
     }
 
     fun PdcHistoryAndNotify(){
-        dataManager.api
+        compositeDisposable.add(dataManager.api
                 .so
                 .getSoHistory()
                 .subscribeOn(Schedulers.io())
@@ -64,6 +78,7 @@ class PdcUseCase @Inject constructor(val dataManager: DataManager, val formatNum
                 }) { throwable ->
                     notifyFailure(throwable.localizedMessage)
                 }
+        )
     }
 
     private fun changeFormat(item : ItemSchema): ItemSchema{

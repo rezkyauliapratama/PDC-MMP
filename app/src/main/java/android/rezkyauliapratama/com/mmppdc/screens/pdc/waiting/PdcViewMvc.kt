@@ -8,7 +8,8 @@ interface PdcViewMvc: ObservableViewMvc<PdcViewMvc.Listener>{
 
     interface Listener {
         fun onClickDetailInformation()
-        fun onSelectPDC(listPdc : MutableList<PdcSchema>)
+        fun onApprovePDC(listPdc : MutableList<PdcSchema>)
+        fun onRejectPDC(listPdc : MutableList<PdcSchema>)
     }
 
 
@@ -17,6 +18,8 @@ interface PdcViewMvc: ObservableViewMvc<PdcViewMvc.Listener>{
     fun showProgressIndication()
 
     fun hideProgressIndication()
+
+    fun hideFabIndication()
 
 
 }
