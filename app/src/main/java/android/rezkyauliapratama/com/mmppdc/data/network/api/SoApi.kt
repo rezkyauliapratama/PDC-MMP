@@ -2,6 +2,8 @@ package android.rezkyauliapratama.com.mmppdc.data.network.api
 
 import android.os.Parcelable
 import android.rezkyauliapratama.com.mmppdc.data.network.ObjectUrl
+import android.rezkyauliapratama.com.mmppdc.data.repository.ApiResponse
+import android.rezkyauliapratama.com.mmppdc.data.schema.ApprovalSchema
 import android.rezkyauliapratama.com.mmppdc.data.schema.PdcSchema
 import com.google.gson.Gson
 import com.rezkyaulia.android.light_optimization_data.NetworkClient
@@ -30,6 +32,18 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
         return Single.create<Response> { emitter ->
             try {
                 soHistory()
+                        .apply { emitter.onSuccess(this) }
+            } catch (e: Exception) {
+                emitter.onError(e)
+            }
+        }
+
+    }
+
+    fun postSoApproval(request : ApprovalSchema) : Single<ApprovalResponse> {
+        return Single.create<ApprovalResponse> { emitter ->
+            try {
+                soApproval(request)
                         .apply { emitter.onSuccess(this) }
             } catch (e: Exception) {
                 emitter.onError(e)
@@ -77,6 +91,28 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
 
     }
 
+    private fun soApproval(request: ApprovalSchema) : ApprovalResponse
+    {
+        val tag = "soApproval"
+        try
+        {
+            return with(networkClient){
+                cancelByTag(tag)
+                withUrl(ObjectUrl.soApproval())
+                        .initAs(ApprovalResponse::class.java)
+                        .setHeaders(getUserHeaderWithToken().build())
+                        .setJsonPojoBody(request)
+                        .setTag(tag)
+                        .syncFuture
+            }
+        } catch (e: Exception) {
+            throw e
+        }
+
+    }
+
+
+    class ApprovalResponse: ApiResponse<List<PdcSchema>>()
 
     @Parcelize
     data class Response (

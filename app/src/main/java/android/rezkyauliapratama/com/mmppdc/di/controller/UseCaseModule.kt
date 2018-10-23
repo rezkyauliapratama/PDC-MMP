@@ -1,6 +1,7 @@
 package android.rezkyauliapratama.com.mmppdc.di.controller
 
 import android.rezkyauliapratama.com.mmppdc.data.DataManager
+import android.rezkyauliapratama.com.mmppdc.data.repository.ApprovalUseCase
 import android.rezkyauliapratama.com.mmppdc.data.repository.LoginUseCase
 import android.rezkyauliapratama.com.mmppdc.data.repository.PdcUseCase
 import android.rezkyauliapratama.com.mmppdc.utils.FormatNumber
@@ -17,5 +18,10 @@ class UseCaseModule{
     @Provides
     fun getPdcUseCase(dataManager: DataManager, formatNumber: FormatNumber) : PdcUseCase{
         return PdcUseCase(dataManager,formatNumber)
+    }
+
+    @Provides
+    fun getApprovalUseCase(dataManager: DataManager) : ApprovalUseCase{
+        return ApprovalUseCase(dataManager)
     }
 }

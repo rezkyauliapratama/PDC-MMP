@@ -8,7 +8,7 @@ interface PdcViewMvc: ObservableViewMvc<PdcViewMvc.Listener>{
 
     interface Listener {
         fun onClickDetailInformation()
-        fun onSelectPDC(listPdc : List<PdcSchema>)
+        fun onSelectPDC(listPdc : MutableList<PdcSchema>)
     }
 
 

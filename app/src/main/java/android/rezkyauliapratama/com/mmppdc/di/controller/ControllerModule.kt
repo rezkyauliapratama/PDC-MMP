@@ -1,6 +1,7 @@
 package android.rezkyauliapratama.com.mmppdc.di.controller
 
 import android.rezkyauliapratama.com.mmppdc.data.DataManager
+import android.rezkyauliapratama.com.mmppdc.data.repository.ApprovalUseCase
 import android.rezkyauliapratama.com.mmppdc.data.repository.LoginUseCase
 import android.rezkyauliapratama.com.mmppdc.data.repository.PdcUseCase
 import android.rezkyauliapratama.com.mmppdc.screens.common.screennavigator.ScreensNavigator
@@ -24,8 +25,8 @@ class ControllerModule {
     }
 
     @Provides
-    fun getPdcController(screensNavigator: ScreensNavigator, pdcUseCase: PdcUseCase) : PdcController {
-        return PdcController(screensNavigator, pdcUseCase)
+    fun getPdcController(screensNavigator: ScreensNavigator, pdcUseCase: PdcUseCase, approvalUseCase: ApprovalUseCase) : PdcController {
+        return PdcController(screensNavigator, pdcUseCase,approvalUseCase)
     }
 
     @Provides

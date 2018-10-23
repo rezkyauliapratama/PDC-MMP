@@ -16,6 +16,7 @@ import android.view.ViewGroup
 import com.app.infideap.stylishwidget.view.Stylish
 import com.google.gson.Gson
 import org.jetbrains.anko.error
+import org.jetbrains.anko.sdk25.coroutines.onClick
 
 class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactory: ViewMvcFactory,val constant: Constant) :
         BaseObservableViewMvc<PdcViewMvc.Listener>(), PdcViewMvc, PdcRvAdapter.Listener {
@@ -23,6 +24,8 @@ class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactor
 
     var binding : FragmentListSoBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_list_so,parent,false)
     private var adapter: PdcRvAdapter
+
+    val listPdc : MutableList<PdcSchema> = mutableListOf()
 
     init{
         dataBinding = binding
@@ -38,10 +41,17 @@ class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactor
 
         binding.fab.setFabTypeface(Stylish.getInstance().getTypeface(getContext(),"fonts/Nunito/Nunito-Regular.ttf",0))
 
+        binding.fab.onClick {
+            for(listener in listeners){
+                listener.onSelectPDC(listPdc)
+            }
+        }
     }
 
     override fun onPdcSelected(listPdc: List<PdcSchema>) {
         val filteredMap = listPdc.filter {it.isSelected}
+
+        this.listPdc.addAll(filteredMap)
 
         if (filteredMap.size == 0){
             binding.fab.visibility = View.GONE

@@ -32,5 +32,13 @@ object ObjectUrl : AnkoLogger {
                     .toString()
         }
 
+    fun soApproval(): String{
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+                .appendPath("salesorders")
+                .appendPath("approval.json")
+                .build()
+                .toString()
+    }
+
 
 }
