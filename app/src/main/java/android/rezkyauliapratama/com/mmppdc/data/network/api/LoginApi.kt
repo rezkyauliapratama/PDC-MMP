@@ -19,7 +19,7 @@ class LoginApi  @Inject constructor(private val networkClient: NetworkClient) : 
         return Single.create<Response> { emitter ->
             try {
                 login(user)
-                        .apply { emitter.onSuccess(this) }
+                        .apply { this?.let { emitter.onSuccess(it) } }
             } catch (e: Exception) {
                 emitter.onError(e)
             }
@@ -28,7 +28,7 @@ class LoginApi  @Inject constructor(private val networkClient: NetworkClient) : 
     }
 
 
-    private fun login(user: UserSchema) : Response
+    private fun login(user: UserSchema) : Response?
     {
 
         try

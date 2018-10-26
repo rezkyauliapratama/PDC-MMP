@@ -17,14 +17,27 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
 
     //public function yang digunakan aplikasi untuk mengambil data articles dari API dengan cara menjalankan getAllArticles
     fun getSoWaiting() : Single<Response> {
-        return Single.create<Response> { emitter ->
+      /*  return Single.create<Response> { emitter ->
             try {
                 soWaiting()
-                        .apply { emitter.onSuccess(this) }
+                        .apply { this?.let { emitter.onSuccess(it) } }
             } catch (e: Exception) {
                 emitter.onError(e)
             }
-        }
+        }*/
+
+        val tag = "soWaiting"
+
+            return with(networkClient){
+                cancelByTag(tag)
+                withUrl(ObjectUrl.soWaiting())
+                        .initAs(Response::class.java)
+                        .setHeaders(getUserHeaderWithToken().build())
+                        .setTag(tag)
+                        .getAsSingle()
+            }
+
+
 
     }
 
@@ -32,7 +45,7 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
         return Single.create<Response> { emitter ->
             try {
                 soHistory()
-                        .apply { emitter.onSuccess(this) }
+                        .apply { this?.let { emitter.onSuccess(it) } }
             } catch (e: Exception) {
                 emitter.onError(e)
             }
@@ -44,7 +57,7 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
         return Single.create<ApprovalResponse> { emitter ->
             try {
                 soApproval(request)
-                        .apply { emitter.onSuccess(this) }
+                        .apply { this?.let { emitter.onSuccess(it) } }
             } catch (e: Exception) {
                 emitter.onError(e)
             }
@@ -52,7 +65,7 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
 
     }
 
-    private fun soWaiting() : Response
+    private fun soWaiting() : Response?
     {
         val tag = "soWaiting"
         try
@@ -72,7 +85,7 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
     }
 
 
-    private fun soHistory() : Response
+    private fun soHistory() : Response?
     {
         val tag = "soHistory"
         try
@@ -91,7 +104,7 @@ class SoApi @Inject constructor(private val networkClient: NetworkClient) : Base
 
     }
 
-    private fun soApproval(request: ApprovalSchema) : ApprovalResponse
+    private fun soApproval(request: ApprovalSchema) : ApprovalResponse?
     {
         val tag = "soApproval"
         try

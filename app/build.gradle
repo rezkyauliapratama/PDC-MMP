@@ -95,7 +95,11 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
 
     //networking
-    implementation "com.rezkyaulia.library:light-networking:0.1"
+//    implementation "com.rezkyaulia.library:light-networking:0.1"
+
+    //external lib
+    implementation project(path: ':light-optimization-data')
+
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     //log
