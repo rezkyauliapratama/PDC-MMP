@@ -44,7 +44,7 @@ abstract class BaseActivity<T : BaseController, U : ViewMvc, V : ViewDataBinding
 
         super.onCreate(savedInstanceState)
 
-        setContentView(mViewMvc.dataBinding?.root)
+        setContentView(mViewMvc.dataBinding.root)
     }
 
 
