@@ -71,7 +71,7 @@ class PdcViewMvcImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactor
     }
 
     override fun hideProgressIndication() {
-        binding.swipeRefreshListSo.isRefreshing = false
+            binding.swipeRefreshListSo.isRefreshing = false
     }
 
     override fun hideFabIndication() {

@@ -81,26 +81,5 @@ class DimensionConverter {
 
     private inner class InternalDimension(internal var value: Float, internal var unit: Int)
 
-    companion object {
-
-        // Step 1: private static variable of INSTANCE variable
-        @Volatile
-        private var INSTANCE: DimensionConverter? = null
-
-        // Step 3: Provide public static getInstance() method returning INSTANCE after checking
-        // double-checking lock
-        // synchronized block
-        val instance: DimensionConverter?
-            get() {
-                if (null == INSTANCE) {
-                    synchronized(DimensionConverter::class.java) {
-                        if (null == INSTANCE) {
-                            INSTANCE = DimensionConverter()
-                        }
-                    }
-                }
-                return INSTANCE
-            }
-    }
 
 }
